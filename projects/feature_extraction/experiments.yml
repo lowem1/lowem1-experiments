@@ -1,0 +1,35 @@
+global:
+  experiment_name: consT5
+  limit: 1000
+  default_checkpoint: t5-small
+  checkpoints:
+    - t5-small
+   #  - google/byt5-base
+    - bert-base-uncased
+  dataset_checkpoint: lowem1/training-invoices
+  labels: 4
+  max_length: 128
+  classifiers:
+    KNeighborsClassifier:
+      n_neighbors: 3
+    DecisionTreeClassifier:
+      max_depth: 5
+    MLPClassifier:
+      alpha: .01
+      max_iter: 1000
+      activation: relu
+    LogisticRegression:
+      solver: liblinear
+      penalty: l1
+    AdaBoostClassifier:
+      n_estimators: 100
+      learning_rate: 1.0E-3
+    GaussianNB:
+      var_smoothing: 1.0E-9
+  pipeline_params:
+    task: feature-extraction
+    model: t5-small
+    tokenizer: t5-small
+    padding: True
+    max_length: 128
+    return_tensors: pt

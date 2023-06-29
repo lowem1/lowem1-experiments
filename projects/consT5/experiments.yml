@@ -1,0 +1,59 @@
+global:
+  experiment_name: consT5
+  n_samples: 132
+  n_augs: 1
+  checkpoint: google/byt5-small
+  labels: 1
+  max_length: 128
+  tfboard_log_dir: /mnt/logs/
+  augmentation_params:
+    name: "OCR_Aug"
+    aug_char_min: 2
+    aug_char_max: 10 
+    aug_char_p: .3 
+    aug_word_p: .3
+    aug_word_min: 1
+    aug_word_max: 10
+    stopwords: None
+    tokenizer: None
+    reverse_tokenizer: None
+    verbose: 0
+    stopwords_regex: None
+    min_char: 1
+training:
+  experiment_0:
+    training_args:
+      output_dir: invoice_lr_1
+      evaluation_strategy: steps
+      num_train_epochs: 1
+      learning_rate: 1.0E-1
+      per_device_train_batch_size: 16
+      per_device_eval_batch_size: 16
+      logging_steps: 50
+  experiment_1:
+    training_args:
+      output_dir: invoice_lr_2
+      evaluation_strategy: steps
+      num_train_epochs: 1
+      learning_rate: 1.0E-2
+      per_device_train_batch_size: 16
+      per_device_eval_batch_size: 16
+      logging_steps: 50
+  experiment_2:
+    training_args:
+      output_dir: invoice_lr_3
+      evaluation_strategy: steps 
+      num_train_epochs: 1
+      learning_rate: 1.0E-3
+      per_device_train_batch_size: 16
+      per_device_eval_batch_size: 16
+      logging_steps: 50
+  experiment_3:
+    training_args:
+      output_dir: invoice_lr_4
+      evaluation_strategy: steps
+      num_train_epochs: 1
+      learning_rate: 1.0E-4
+      per_device_train_batch_size: 16
+      per_device_eval_batch_size: 16 
+      logging_steps: 50

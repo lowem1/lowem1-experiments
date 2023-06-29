@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "lowem1-experiments"
+version = "0.1.0"
+description = ""
+authors = ["lowem1 <lowem1@aetna.com>"]
+readme = "README.md"
+packages = [{include = "lowem1_experiments"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+transformers = {extras = ["torch"], version = "^4.30.2"}
+datasets = "^2.13.0"
+pandas = "^2.0.2"
+numpy = "^1.25.0"
+nlpaug = "^1.1.11"
+tqdm = "^4.65.0"
+tensorboard = "^2.13.0"
+torch = "1.13.0"
+black = "^23.3.0"
+sklearn = "^0.0.post5"
+scikit-learn = "^1.2.2"
+matplotlib = "^3.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.23.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
