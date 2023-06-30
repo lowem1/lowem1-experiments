@@ -1,5 +1,7 @@
 global:
+  mode: deploy
   experiment_name: consT5
+  best_run: experiment_2
   n_samples: 132
   n_augs: 1
   checkpoint: google/byt5-small
